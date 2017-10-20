@@ -510,6 +510,11 @@ UI_Mainwindow::UI_Mainwindow()
   toggle_fft_act->setShortcut(QKeySequence("f"));
   addAction(toggle_fft_act);
 
+  save_screenshot_act = new QAction(this);
+  save_screenshot_act->setShortcut(QKeySequence::Print);
+  connect(save_screenshot_act, SIGNAL(triggered()), this, SLOT(save_screenshot()));
+  addAction(save_screenshot_act);
+
   DPRwidget->setEnabled(false);
 
   recent_dir[0] = 0;
